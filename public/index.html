@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+    <title>Color Therapy Gradient Generator</title>
+</head>
+<body id="gradient">
+    <!-- Header with dark background and white text -->
+    <header>
+        <h1>Colour Therapy Gradient Generator</h1>
+    </header>
+
+    <main>
+        <!-- Intro Section -->
+        <section id="introSection">
+            <h2>Choose Two Colours</h2>
+            <p>Create a soothing gradient and explore its healing properties.</p>
+        </section>
+        
+        <!-- Color Picker Section -->
+        <section id="colorPickerSection">
+            <div class="color-picker">
+                <label for="color1">First Colour:</label>
+                <input id="color1" class="color1" type="color" name="color1" value="#00ff00">
+            </div>
+            <div class="color-picker">
+                <label for="color2">Second Colour:</label>
+                <input id="color2" class="color2" type="color" name="color2" value="#ff0000">
+            </div>
+        </section>
+        
+        <!-- Healing Section -->
+        <section id="healingSection">
+            <h3>Discover Colour Healing</h3>
+            <div>
+                <label for="temperatureSlider">Adjust Creativity:</label>
+                <div id="sliderContainer">
+                    <span>Simple</span>
+                    <input type="range" id="temperatureSlider" min="0" max="100" value="70">
+                    <span>Creative</span>
+                </div>
+                <p id="sliderValue">Creativity Level: 7</p> <!-- This starts with the initial value of 70 -->
+            </div>
+            <button id="generateEmotion">Discover</button>
+            <p id="emotionDescription"></p>
+        </section>
+        
+        
+    </main>
+
+    <footer>
+        <p>Explore the calming effects of colors and create your own color therapy gradients.</p>
+    </footer>
+
+    <script type="text/javascript" src="script.js"></script>
+</body>
+</html>
