@@ -1,0 +1,193 @@
+/* Global Styles */
+body {
+    font-family: 'Cormorant Garamond', serif;
+    color: rgba(0, 0, 0, 0.7);
+    text-align: center;
+    letter-spacing: 0.05em;
+    background: linear-gradient(to right, rgb(0, 136, 255), yellow);
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Header Area */
+header {
+    background-color: #000; /* Dark background for the header */
+    color: #fff;            /* White text color */
+    padding: 20px 0;        /* Padding for top and bottom spacing */
+    margin: 0;              /* Remove any default margins */
+    width: 100vw;           /* Full width of the viewport */
+    position: relative;     /* Ensure it stays in the document flow */
+    top: 0;                 /* Align to the top of the page */
+    left: 0;                /* Align to the left side of the page */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Optional: Add a shadow for depth */
+    box-sizing: border-box; /* Include padding and border in the element's width/height */
+}
+
+/* Main Title */
+h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: 3.5em;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    margin: 0.5em 0;
+}
+
+/* Section Headings */
+h2, h3 {
+    font-weight: 700;
+    font-size: 1.5em;
+    color: #444;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 1em;
+}
+
+/* Paragraphs */
+p {
+    font-weight: 400;
+    font-size: 1.1em;
+    color: #555;
+    max-width: 600px;
+    margin: 0 auto 1.5em;
+    line-height: 1.6;
+}
+
+/* Input Labels */
+label {
+    font-weight: 600;
+    font-size: 1.2em;
+    color: #666;
+    margin-right: 10px;
+}
+
+/* Color Input Styles */
+input[type="color"] {
+    width: 80px; /* Make the color box larger */
+    height: 80px; /* Make the color box larger */
+    border: none;
+    cursor: pointer;
+    margin-bottom: 1.5em;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 10%; /* Adjust shape */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+}
+
+input[type="color"]:hover {
+    transform: scale(1.6); /* Slightly enlarge on hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Increase shadow on hover */
+}
+
+/* Button Style */
+button {
+    font-weight: 600;
+    font-size: 1.2em;
+    color: white;
+    background-color: #333;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #555;
+    transform: translateY(-2px);
+}
+
+/* Gradient Description */
+#emotionDescription {
+    font-weight: 500;
+    font-size: 1.2em;
+    color: #444;
+    margin-top: 1.5em;
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    max-width: 700px;
+    margin: 20px auto;
+}
+
+/* Footer Style */
+footer {
+    background-color: #333;  /* Dark background for contrast */
+    color: white;  /* Ensure text color is white */
+    text-align: center;  /* Center align text */
+    padding: 20px;  /* Re-add padding for spacing */
+    margin-top: auto;
+    width: 100%;
+    box-shadow: 0 -2px 5px rgba(160, 58, 58, 0.2); /* Optional: Add a shadow to the top of the footer */
+    display: flex;  /* Use flexbox to align content */
+    justify-content: center;  /* Center content horizontally */
+    align-items: center;  /* Center content vertically */
+}
+
+footer p {
+    margin: 0;
+    font-size: 1em;
+    font-weight: 400;
+    color: inherit;  /* Inherit the color from the footer */
+}
+
+/* Section Specific Styles */
+
+/* Intro Section */
+#introSection {
+    background-color: #f0f8ff; /* Light blue background */
+    color: #333;               /* Dark text color */
+    text-align: center;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Color Picker Section */
+#colorPickerSection {
+    background-color: #fff5e6; /* Light orange background */
+    color: #444;               /* Slightly darker text color */
+    display: flex;
+    justify-content: center;
+    gap: 30px;                 /* Space between color pickers */
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+#healingSection {
+    background-color: #e6ffe6;
+    color: #333;
+    text-align: center;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#sliderContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+#temperatureSlider {
+    width: 70%; /* Adjust the width as needed */
+    margin: 0 10px;
+}
+
+#sliderValue {
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 1.2em;
+    color: #444;
+}
