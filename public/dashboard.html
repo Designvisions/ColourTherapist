@@ -1,0 +1,107 @@
+<!-- public/dashboard.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LLM Configuration Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            text-align: center;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"], input[type="number"], input[type="range"] {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>LLM Configuration Dashboard</h1>
+    <div class="form-group">
+        <label for="temperature">Temperature (0.0 - 1.0):</label>
+        <input type="range" id="temperature" name="temperature" min="0" max="1" step="0.1" value="0.7">
+        <span id="temperatureValue">0.7</span>
+    </div>
+    <div class="form-group">
+        <label for="top_p">Top P (0.0 - 1.0):</label>
+        <input type="range" id="top_p" name="top_p" min="0" max="1" step="0.1" value="0.9">
+        <span id="top_pValue">0.9</span>
+    </div>
+    <div class="form-group">
+        <label for="frequency_penalty">Frequency Penalty (0.0 - 2.0):</label>
+        <input type="range" id="frequency_penalty" name="frequency_penalty" min="0" max="2" step="0.1" value="0.5">
+        <span id="frequency_penaltyValue">0.5</span>
+    </div>
+    <div class="form-group">
+        <label for="presence_penalty">Presence Penalty (0.0 - 2.0):</label>
+        <input type="range" id="presence_penalty" name="presence_penalty" min="0" max="2" step="0.1" value="0.5">
+        <span id="presence_penaltyValue">0.5</span>
+    </div>
+    <button id="saveConfig">Save Configuration</button>
+    <p id="statusMessage"></p>
+
+    <script>
+        // Update displayed value when sliders are moved
+        document.getElementById('temperature').addEventListener('input', function() {
+            document.getElementById('temperatureValue').textContent = this.value;
+        });
+
+        document.getElementById('top_p').addEventListener('input', function() {
+            document.getElementById('top_pValue').textContent = this.value;
+        });
+
+        document.getElementById('frequency_penalty').addEventListener('input', function() {
+            document.getElementById('frequency_penaltyValue').textContent = this.value;
+        });
+
+        document.getElementById('presence_penalty').addEventListener('input', function() {
+            document.getElementById('presence_penaltyValue').textContent = this.value;
+        });
+
+        // Save configuration
+        document.getElementById('saveConfig').addEventListener('click', async function() {
+            const config = {
+                temperature: parseFloat(document.getElementById('temperature').value),
+                top_p: parseFloat(document.getElementById('top_p').value),
+                frequency_penalty: parseFloat(document.getElementById('frequency_penalty').value),
+                presence_penalty: parseFloat(document.getElementById('presence_penalty').value)
+            };
+
+            const response = await fetch('/update-config', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(config)
+            });
+
+            const result = await response.json();
+            document.getElementById('statusMessage').textContent = result.message;
+        });
+    </script>
+</body>
+</html>
